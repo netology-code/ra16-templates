@@ -11,7 +11,7 @@ function Feedback() {
     const handleChange = evt => {
         const name = evt.target.name;
         const value = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value
-        setForm({...form, [name]: value});
+        setForm(prevForm => ({...prevForm, [name]: value}));
     }
 
     const onSubmit = evt => {
